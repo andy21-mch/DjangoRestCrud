@@ -58,16 +58,16 @@ def update_item(request, pk):
 
     if data.is_valid():
         data.save()
-        return Response(data.data)
+        return ApiResponse("Item successfully updated", data.data, status.HTTP_200_OK)
     else:
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return ApiResponse("Something wenth wrong", None, status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['DELETE'])
 def delete_item(request, pk):
     item = get_object_or_404(Item, pk=pk)
     item.delete()
-    return Response(status=status.HTTP_202_ACCEPTED)
+    return ApiResponse("Item succesfully deleted", None, status.HTTP_202_ACCEPTED)
 
 
 @api_view(['GET'])

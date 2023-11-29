@@ -21,21 +21,21 @@ Before you begin, ensure you have the following installed:
 
 - Python (3.7 or higher)
 - pip (package installer for Python)
-- virtualenv (optional but recommended)
+- virtualenv or venv (optional but recommended)
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/simple-drf-crud.git
-cd simple-drf-crud
+git clone https://github.com/andy21-mch/DjangoRestCrud
+cd DjangoRestCrud
 ```
 
 Create and activate a virtual environment (optional but recommended):
 
 ```bash
-virtualenv env or python3 -m venv myenv
+virtualenv env || python3 -m venv myenv
 source env/bin/activate  # for Unix/Linux
 env\Scripts\activate  # for Windows
 ```
@@ -49,7 +49,8 @@ pip install -r requirements.txt
 Set up the database:
 
 ```bash
-python manage.py migrate
+python manage.py makemigrations api
+python manage.py migrate api
 ```
 
 Create a superuser:
